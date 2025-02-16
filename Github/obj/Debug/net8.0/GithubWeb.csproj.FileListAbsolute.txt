@@ -1,0 +1,6 @@
+C:\Users\ChristianGraus\source\repos\Github\Github\obj\Debug\net8.0\GithubWeb.csproj.AssemblyReference.cache
+C:\Users\ChristianGraus\source\repos\Github\Github\obj\Debug\net8.0\GithubWeb.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ChristianGraus\source\repos\Github\Github\obj\Debug\net8.0\GithubWeb.AssemblyInfoInputs.cache
+C:\Users\ChristianGraus\source\repos\Github\Github\obj\Debug\net8.0\GithubWeb.AssemblyInfo.cs
+C:\Users\ChristianGraus\source\repos\Github\Github\obj\Debug\net8.0\GithubWeb.csproj.CoreCompileInputs.cache
+C:\Users\ChristianGraus\source\repos\Github\Github\obj\Debug\net8.0\GithubWeb.MvcApplicationPartsAssemblyInfo.cache

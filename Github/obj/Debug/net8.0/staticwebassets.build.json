@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "D9xo8BhW5U6G6olPUBTSUKMJTivRdViCApvlZ0HbfzQ=",
+  "Source": "Github.Web",
+  "BasePath": "_content/Github.Web",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}

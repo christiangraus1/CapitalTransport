@@ -19,7 +19,7 @@ public class Endpoint
 {
     public const string EndpointName = "GithubGetUsers";
 
-    public static async Task<Results<Ok<IEnumerable<Result>>, BadRequest<string>>> HandleAsync(
+    public static async Task<Results<Ok<List<Result>>, BadRequest<string>>> HandleAsync(
         HttpRequest Request,
         IGithubBusinessLayer github,
         IMapper mapper,
@@ -32,7 +32,7 @@ public class Endpoint
             var result = await github.GetUsers(names.ToList());
 
             if(result != null)
-                return TypedResults.Ok(result.Select(e => mapper.Map<Result>(e)).OrderBy(e => e.Name);
+                return TypedResults.Ok(result.Select(e => mapper.Map<Result>(e)).OrderBy(e => e.Name).ToList());
         }
         catch(Exception ex)
         {

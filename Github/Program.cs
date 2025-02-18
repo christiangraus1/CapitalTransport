@@ -1,6 +1,7 @@
 using AutoMapper;
 using Github.AutoMapper;
 using Github.BusinessLayer;
+using Github.BusinessLayer.Entities;
 using Github.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -20,6 +21,15 @@ var config = new MapperConfiguration(cfg => {
 var mapper = config.CreateMapper();
 
 builder.Services.AddScoped<IMapper>(e => mapper);
+
+var configuration = new ConfigurationBuilder()
+    .AddJsonFile("appsettings.json")
+    .Build();
+
+var securityConfig = new SecuritySettings();
+configuration.GetSection("Security").Bind(securityConfig);
+
+builder.Services.AddSingleton<SecuritySettings>(securityConfig);
 
 var assemblies = AppDomain.CurrentDomain.GetAssemblies();
 var bus = assemblies.Where(e => e.FullName?.Contains("Github.BusinessLayer") ?? false).First();

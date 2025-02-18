@@ -11,15 +11,12 @@ namespace Github.BusinessLayer;
 public class GithubBusinessLayer : IGithubBusinessLayer
 {
     private readonly IHttpClientFactory _httpClientFactory;
+    private readonly SecuritySettings _securitySettings;
 
-    public GithubBusinessLayer()
-    {
-
-    }
-
-    public GithubBusinessLayer(IHttpClientFactory httpClientFactory)
+    public GithubBusinessLayer(IHttpClientFactory httpClientFactory, SecuritySettings securitySettings)
     {
         _httpClientFactory = httpClientFactory;
+        _securitySettings = securitySettings;
     }
 
     public async Task<List<GithubUser>> GetUsers(List<string> usernames)
@@ -35,7 +32,7 @@ public class GithubBusinessLayer : IGithubBusinessLayer
                 new MediaTypeWithQualityHeaderValue("application/vnd.github.v3+json"));
             httpClient.DefaultRequestHeaders.Add("User-Agent", "Github code test");
             // In a real app the user would probably have to log in, or this would be stored in settings if we used a token that did not expire or had a reasonable life.
-            httpClient.DefaultRequestHeaders.Add("Authorization", "Bearer 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");
+            httpClient.DefaultRequestHeaders.Add("Authorization", _securitySettings.GithubPassword);
 
             foreach (var username in usernames)
             {

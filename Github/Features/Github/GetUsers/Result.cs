@@ -3,12 +3,18 @@ using System.Xml.Linq;
 
 namespace Github.Features.Github.GetUsers
 {
-    public record Result
-        (
-          string Name,
-          string Login,
-          string Company,
-          int NumberOfFollowers,
-          int NumberOfRepositories
-        );
+    public class Result
+    {
+        public string Name { get; set; } = string.Empty;
+
+        public string Login { get; set; } = string.Empty;
+
+        public string Company { get; set; } = string.Empty;
+
+        public int NumberOfFollowers { get; set; }
+
+        public int NumberOfRepositories { get; set; }
+
+        public decimal AverageNumberOfFollowers { get; set; }
+    }
 }

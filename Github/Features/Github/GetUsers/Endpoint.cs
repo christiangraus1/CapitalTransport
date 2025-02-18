@@ -32,7 +32,7 @@ public class Endpoint
             var result = await github.GetUsers(names.ToList());
 
             if(result != null)
-                return TypedResults.Ok(result.Select(e => mapper.Map<Result>(e)));
+                return TypedResults.Ok(result.Select(e => mapper.Map<Result>(e)).OrderBy(e => e.Name);
         }
         catch(Exception ex)
         {
